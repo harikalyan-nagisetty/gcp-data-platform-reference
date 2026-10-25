@@ -1,0 +1,6 @@
+# Local development and CI. Airflow is installed separately in CI (with
+# constraints) and by the docker image, so it is not listed here.
+# Keep pyspark on the same minor version as the Dataproc Serverless runtime.
+pyspark>=3.5,<3.6
+pytest>=8
+ruff>=0.6

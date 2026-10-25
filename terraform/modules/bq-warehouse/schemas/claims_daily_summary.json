@@ -1,0 +1,10 @@
+[
+  { "name": "service_date", "type": "DATE", "mode": "NULLABLE", "description": "Partition column" },
+  { "name": "diagnosis_code", "type": "STRING", "mode": "NULLABLE" },
+  { "name": "claim_status", "type": "STRING", "mode": "NULLABLE" },
+  { "name": "claim_count", "type": "INTEGER", "mode": "NULLABLE" },
+  { "name": "member_count", "type": "INTEGER", "mode": "NULLABLE" },
+  { "name": "total_billed", "type": "NUMERIC", "mode": "NULLABLE" },
+  { "name": "total_paid", "type": "NUMERIC", "mode": "NULLABLE" },
+  { "name": "paid_ratio", "type": "NUMERIC", "mode": "NULLABLE", "description": "total_paid / total_billed" }
+]

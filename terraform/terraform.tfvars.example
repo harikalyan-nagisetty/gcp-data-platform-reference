@@ -1,0 +1,10 @@
+# Copy to terraform.tfvars (git-ignored) and fill in.
+project_id = "your-gcp-project-id"
+region     = "us-central1"
+
+# Optional
+# name_prefix         = "cdp"
+# bq_location         = "US"
+# raw_retention_days  = 30
+# force_destroy       = true   # sandbox only
+# analyst_members     = ["user:you@example.com"]

@@ -1,0 +1,11 @@
+[
+  { "name": "claim_id", "type": "STRING", "mode": "NULLABLE", "description": "Unique claim identifier (opaque token)" },
+  { "name": "member_id", "type": "STRING", "mode": "NULLABLE", "description": "Synthetic member token" },
+  { "name": "provider_id", "type": "STRING", "mode": "NULLABLE", "description": "Synthetic provider token" },
+  { "name": "service_date", "type": "DATE", "mode": "NULLABLE", "description": "Partition column" },
+  { "name": "diagnosis_code", "type": "STRING", "mode": "NULLABLE", "description": "Upper-cased, trimmed diagnosis code" },
+  { "name": "procedure_code", "type": "STRING", "mode": "NULLABLE", "description": "Upper-cased, trimmed procedure code" },
+  { "name": "billed_amount", "type": "NUMERIC", "mode": "NULLABLE", "description": "Amount billed" },
+  { "name": "paid_amount", "type": "NUMERIC", "mode": "NULLABLE", "description": "Amount paid, never above billed" },
+  { "name": "claim_status", "type": "STRING", "mode": "NULLABLE", "description": "PAID, DENIED or PENDING" }
+]

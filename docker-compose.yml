@@ -1,0 +1,22 @@
+# Local Airflow for development. Requires Docker Compose v2.24 or newer.
+#   gcloud auth application-default login
+#   make airflow-up        # then open http://localhost:8080 (user: admin,
+#                          # password is printed in `docker compose logs airflow`)
+services:
+  airflow:
+    image: apache/airflow:2.10.5-python3.11
+    user: "${AIRFLOW_UID:-50000}:0"
+    command: standalone
+    ports:
+      - "8080:8080"
+    env_file:
+      - path: .env
+        required: false
+    environment:
+      AIRFLOW__CORE__LOAD_EXAMPLES: "false"
+      # Empty connection: the Google provider falls back to Application Default Credentials.
+      AIRFLOW_CONN_GOOGLE_CLOUD_DEFAULT: "google-cloud-platform://"
+      CLOUDSDK_CONFIG: /gcloud-config
+    volumes:
+      - ./dags:/opt/airflow/dags
+      - ${GCLOUD_CONFIG_DIR:-${HOME}/.config/gcloud}:/gcloud-config:ro
